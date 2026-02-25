@@ -1,16 +1,16 @@
 {
     "items": [
         {
-            "name": "test@example.com",
-            "link": "mailto:test@example.com"
+            "name": "Z@CAIYY.COM",
+            "link": "mailto:Z@CAIYY.COM"
         },
         {
-            "name": "GitHub",
-            "link": "https://github.com/…"
+            "name": "说苏博客",
+            "link": "https://shuo.su"
         },
         {
-            "name": "CodePen",
-            "link": "https://codepen.io/…"
+            "name": "CAIYY'S BLOG",
+            "link": "https://caiyy.com"
         }
     ]
 }
