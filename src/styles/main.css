@@ -32,3 +32,217 @@ li {
 a {
     color: deeppink;
 }
+
+/*调试*/
+/* 全局基础重置 & 通用样式 */
+:root {
+  --tw-primary: #2563eb; /* 主色调适配 */
+  --tw-gray-50: #f9fafb;
+  --tw-gray-900: #111827;
+}
+
+/* 页面容器 */
+body {
+  @apply bg-gray-50 text-gray-900 min-h-screen font-sans antialiased;
+}
+
+/* 头部导航栏（适配页面导航结构） */
+header,
+nav {
+  @apply bg-white shadow-sm sticky top-0 z-50;
+}
+
+nav > div {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center;
+}
+
+nav a {
+  @apply text-gray-700 hover:text-primary transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium;
+}
+
+nav a.active {
+  @apply bg-primary/10 text-primary font-semibold;
+}
+
+/* 主内容区 */
+main {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+}
+
+/* 页面标题 */
+h1 {
+  @apply text-3xl font-bold tracking-tight text-gray-900 mb-6;
+}
+
+h2 {
+  @apply text-2xl font-bold tracking-tight text-gray-900 mb-4;
+}
+
+h3 {
+  @apply text-xl font-semibold tracking-tight text-gray-900 mb-3;
+}
+
+/* 文本 & 链接 */
+p {
+  @apply text-gray-700 mb-4 leading-relaxed;
+}
+
+a {
+  @apply text-primary hover:text-primary/80 underline underline-offset-2 transition-colors;
+}
+
+/* 卡片/内容块（适配网站内容容器） */
+article,
+div[class*="card"],
+section > div {
+  @apply bg-white rounded-lg shadow-sm p-6 mb-6 hover:shadow-md transition-shadow;
+}
+
+/* 按钮样式（适配页面按钮结构） */
+button,
+a[role="button"],
+input[type="button"],
+input[type="submit"] {
+  @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 active:bg-primary/80 transition-colors font-medium;
+}
+
+button.outline,
+a[role="button"].outline {
+  @apply bg-transparent border border-primary text-primary hover:bg-primary/10;
+}
+
+/* 表单元素（适配搜索/输入框） */
+input,
+textarea,
+select {
+  @apply w-full rounded-md border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors;
+}
+
+label {
+  @apply block text-gray-700 font-medium mb-1;
+}
+
+/* 列表样式 */
+ul,
+ol {
+  @apply mb-4 ml-6;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ol {
+  @apply list-decimal;
+}
+
+li {
+  @apply text-gray-700 mb-1;
+}
+
+/* 页脚 */
+footer {
+  @apply bg-gray-900 text-gray-300 py-8 mt-12;
+}
+
+footer > div {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+footer a {
+  @apply text-gray-300 hover:text-white underline-offset-2 hover:underline;
+}
+
+footer p {
+  @apply text-gray-400 mb-2;
+}
+
+/* 响应式适配 */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  nav > div {
+    @apply flex-col gap-2 py-4;
+  }
+
+  main {
+    @apply py-4;
+  }
+
+  article,
+  div[class*="card"] {
+    @apply p-4;
+  }
+}
+
+/* 暗黑模式适配（如果网站支持） */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  header,
+  nav {
+    @apply bg-gray-800 shadow-md;
+  }
+
+  nav a {
+    @apply text-gray-200;
+  }
+
+  nav a.active {
+    @apply bg-primary/20 text-primary;
+  }
+
+  article,
+  div[class*="card"] {
+    @apply bg-gray-800 shadow-md;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply border-gray-700 bg-gray-800 text-gray-100;
+  }
+
+  label {
+    @apply text-gray-200;
+  }
+}
+
+/* 辅助样式：清除默认间距、优化滚动 */
+* {
+  @apply box-border;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+img {
+  @apply max-w-full h-auto rounded-md mb-4;
+}
+
+blockquote {
+  @apply border-l-4 border-primary pl-4 py-2 text-gray-700 italic mb-4;
+}
+
+/* 适配网站可能的分页组件 */
+div[class*="pagination"] {
+  @apply flex justify-center gap-2 mt-8;
+}
+
+div[class*="pagination"] a,
+div[class*="pagination"] button {
+  @apply px-3 py-1 rounded-md border border-gray-300 hover:bg-primary hover:text-white transition-colors;
+}
+
+div[class*="pagination"] a.active {
+  @apply bg-primary text-white border-primary;
+}
